@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.Socket;
 
 public class ConnectionActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +25,6 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         ipEditText = findViewById(R.id.get_ip);
         sendButton = findViewById(R.id.send);
         sendButton.setOnClickListener(this);
-
 
     }
 
