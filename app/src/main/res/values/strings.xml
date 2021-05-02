@@ -2,4 +2,6 @@
     <string name="app_name">CameraShooter</string>
     <string name="welcome">Welcome</string>
     <string name="join_game">Join Game</string>
+    <string name="send">Send</string>
+    <string name="enter_server_ip">Enter server IP</string>
 </resources>
