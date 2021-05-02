@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30sp"
         android:padding="10dp"
+        android:gravity="center"
         android:hint="@string/enter_server_ip"
         android:inputType="text"
         android:background="@drawable/input_style"/>
