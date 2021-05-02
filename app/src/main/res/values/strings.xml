@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CameraShooter</string>
+    <string name="welcome">Welcome</string>
+    <string name="join_game">Join Game</string>
 </resources>
