@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
 
-    <com.example.cameratest.Circle
+    <com.example.CameraCanvas.Circle
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -6,7 +6,7 @@
         <shape android:shape="oval">
             <size android:width="360dp" android:height="360dp"/>
             <padding android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp" />
-            <stroke android:color="#ff0000" android:width="3dp"/>
+            <stroke android:color="@color/red" android:width="3dp"/>
         </shape>
     </item>
 
@@ -14,7 +14,7 @@
     <item>
         <rotate android:fromDegrees="90" android:toDegrees="90">
             <shape android:shape="line">
-                <stroke android:color="#ff0000" android:width="1dp"/>
+                <stroke android:color="@color/red" android:width="1dp"/>
             </shape>
         </rotate>
     </item>
@@ -23,14 +23,14 @@
 
     <item>
         <shape android:shape="line">
-            <stroke android:color="#ff0000" android:width="1dp"/>
+            <stroke android:color="@color/red" android:width="1dp"/>
         </shape>
     </item>
 
     <!-- this is the inner circle -->
     <item>
         <shape android:shape="oval">
-            <stroke android:color="#ff0000" android:width="2dp"/>
+            <stroke android:color="@color/red" android:width="2dp"/>
         </shape>
     </item>
 
