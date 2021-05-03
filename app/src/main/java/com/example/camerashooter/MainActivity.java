@@ -2,12 +2,12 @@ package com.example.camerashooter;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import shop_navigation.Shop;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,19 +23,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
-
         sound.playSound();
 
         switch (v.getId()){
-
             case R.id.join_game:
                 startActivity(new Intent(getApplicationContext(), ConnectionActivity.class));
                 break;
-            case R.id.setting:
-                //todo make settings
+
+            case R.id.shop:
+                startActivity(new Intent(getApplicationContext(), Shop.class));
                 break;
         }
-
     }
 
+    @Override
+    public void onBackPressed() {}
 }

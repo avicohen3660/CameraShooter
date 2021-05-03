@@ -4,5 +4,8 @@
     <string name="join_game">Join Game</string>
     <string name="send">Send</string>
     <string name="enter_server_ip">Enter server IP</string>
-    <string name="setting">setting</string>
+    <string name="shop">shop</string>
+    <string name="guns">Guns</string>
+    <string name="scopes">Scopes</string>
+    <string name="magazines">Magazines</string>
 </resources>

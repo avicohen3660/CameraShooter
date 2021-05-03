@@ -12,11 +12,12 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
 
-    <com.example.camerashooter.Scope
+    <com.example.camerashooter.DrawScope
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:layout_above="@id/zoomSeekBar"/>
 
 <!--    <Button-->
 <!--        android:id="@+id/changeIP"-->

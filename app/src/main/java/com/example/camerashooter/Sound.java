@@ -18,6 +18,7 @@ public class Sound {
         this.context = context;
         this.sound = sound;
         this.soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
             public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {

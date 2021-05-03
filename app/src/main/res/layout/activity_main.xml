@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_margin="100dp">
+            android:layout_margin="80dp">
 
             <Button
                 android:id="@+id/join_game"
@@ -39,10 +39,10 @@
                 android:onClick="onClick"/>
 
             <Button
-                android:id="@+id/setting"
+                android:id="@+id/shop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/setting"
+                android:text="@string/shop"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:padding="20sp"
