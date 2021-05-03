@@ -36,5 +36,6 @@ public class Scope extends View {
         int length = 50;
         canvas.drawLine(centerX-length,centerY,centerX+length,centerY,paint);
         canvas.drawLine(centerX,centerY-length,centerX,centerY+length,paint);
+
     }
 }
