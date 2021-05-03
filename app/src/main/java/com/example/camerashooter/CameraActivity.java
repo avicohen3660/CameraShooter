@@ -19,13 +19,12 @@ import java.net.Socket;
 
 public class CameraActivity extends AppCompatActivity {
 
-    private static final int CAMERA_REQUEST = 1888;
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
     private FrameLayout frameLayout;
     private Camera camera;
     private ShowCamera showCamera;
     private Button shootButton;
     private Socket server;
+    private Sound sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +33,11 @@ public class CameraActivity extends AppCompatActivity {
 
         shootButton = findViewById(R.id.shootButton);
 
+        sound = new Sound(this, R.raw.shot_sound); // sound
+
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(CameraActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
-        }
-        else{
+        } else{
             startGame();
         }
     }
@@ -51,7 +51,6 @@ public class CameraActivity extends AppCompatActivity {
             Toast.makeText(this,"Must allow camera usage", Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, MainActivity.class));
         }
-
     }
 
     public void startGame(){
@@ -60,15 +59,13 @@ public class CameraActivity extends AppCompatActivity {
         showCamera = new ShowCamera(this, camera, CameraActivity.this);
         frameLayout.addView(showCamera);
 
-
         shootButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v("AVI", showCamera.getTargetColor());
+                sound.playSound();
+//                Log.v("AVI", showCamera.getTargetColor());
             }
         });
-
     }
-
 
 }
