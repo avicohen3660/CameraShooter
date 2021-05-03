@@ -5,24 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class CameraActivity extends AppCompatActivity {
-
-    private static final int CAMERA_REQUEST = 1888;
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
-    private FrameLayout frameLayout;
-    private Camera camera;
-    private ShowCamera showCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +41,10 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
-    public void startCamera(){
-        frameLayout = findViewById(R.id.frame);
-        camera = Camera.open();
-        showCamera = new ShowCamera(this, camera, CameraActivity.this);
+    public void startCamera() {
+        FrameLayout frameLayout = findViewById(R.id.frame);
+        Camera camera = Camera.open();
+        ShowCamera showCamera = new ShowCamera(this, camera, CameraActivity.this);
         frameLayout.addView(showCamera);
-
     }
-
-
 }
