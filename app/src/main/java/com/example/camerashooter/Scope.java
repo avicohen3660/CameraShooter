@@ -1,6 +1,5 @@
 package com.example.camerashooter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class Scope extends View {
+
     public Scope(Context context) {
         super(context);
     }
@@ -28,13 +28,13 @@ public class Scope extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        @SuppressLint("DrawAllocation") Paint paint = new Paint();
+        Paint paint = new Paint();
         paint.setColor(Color.RED);
         paint.setStrokeWidth(5);
         int centerX = (int)getWidth()/2;
         int centerY = (int)getHeight()/2;
-        int r = 50;
-        canvas.drawLine(centerX-r,centerY,centerX+r,centerY,paint);
-        canvas.drawLine(centerX,centerY-r,centerX,centerY+r,paint);
+        int length = 50;
+        canvas.drawLine(centerX-length,centerY,centerX+length,centerY,paint);
+        canvas.drawLine(centerX,centerY-length,centerX,centerY+length,paint);
     }
 }
