@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sound = new Sound(this, R.raw.button_click_sound);
+        sound = new Sound(this, R.raw.bcs);
     }
 
     @SuppressLint("NonConstantResourceId")

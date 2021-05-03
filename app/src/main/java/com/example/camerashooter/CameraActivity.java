@@ -32,7 +32,6 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
 
         shootButton = findViewById(R.id.shootButton);
-
         sound = new Sound(this, R.raw.shot_sound); // sound
 
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -63,7 +62,6 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sound.playSound();
-//                Log.v("AVI", showCamera.getTargetColor());
             }
         });
     }
