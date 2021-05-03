@@ -7,20 +7,20 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class test extends View {
-    public Circle(Context context) {
+public class Scope extends View {
+    public Scope(Context context) {
         super(context);
     }
 
-    public Circle(Context context, AttributeSet attrs) {
+    public Scope(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public Circle(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Scope(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public Circle(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public Scope(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
