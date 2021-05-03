@@ -2,6 +2,7 @@ package com.example.camerashooter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -10,57 +11,53 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.hardware.Camera;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class CameraActivity extends AppCompatActivity {
 
-   private static final int CAMERA_REQUEST = 1888;
-   private static final int MY_CAMERA_PERMISSION_CODE = 100;
-   FrameLayout frameLayout;
-   Drawable aim;
+    private static final int CAMERA_REQUEST = 1888;
+    private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    private FrameLayout frameLayout;
+    private Camera camera;
+    private ShowCamera showCamera;
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        aim = getResources().getDrawable(R.drawable.aim);
-        frameLayout = findViewById(R.id.frame);
 
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(CameraActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
+        }
+        else{
+            startCamera();
 
-//        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-//            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_PERMISSION_CODE);
-//        }else{
-//            Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//            startActivityForResult(cameraIntent, CAMERA_REQUEST);
-//        }
+        }
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == MY_CAMERA_PERMISSION_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-            } else Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            startCamera();
+        } else {
+            Toast.makeText(this,"Must allow camera usage", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, MainActivity.class));
         }
+
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
+    public void startCamera(){
+        frameLayout = findViewById(R.id.frame);
+        camera = Camera.open();
+        showCamera = new ShowCamera(this, camera, CameraActivity.this);
+        frameLayout.addView(showCamera);
 
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-
-        //todo get dot in photo
-        }
     }
+
 
 }
