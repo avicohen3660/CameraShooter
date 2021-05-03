@@ -1,5 +1,6 @@
-package CameraCanvas;
+package com.example.camerashooter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,10 +28,9 @@ public class Scope extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint paint = new Paint();
+        @SuppressLint("DrawAllocation") Paint paint = new Paint();
         paint.setColor(Color.RED);
         paint.setStrokeWidth(5);
-//        canvas.drawColor(Color.RED);
         int centerX = (int)getWidth()/2;
         int centerY = (int)getHeight()/2;
         int r = 50;

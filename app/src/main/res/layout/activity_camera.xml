@@ -12,43 +12,38 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
 
-    <com.example.CameraCanvas.Circle
+    <com.example.camerashooter.Scope
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"/>
 
-    <Button
-        android:id="@+id/changeIP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_alignTop="@id/frame"
-        android:layout_alignEnd="@+id/frame"
-<!--        android:background="@drawable/rounded_button"-->
-        android:text="Change IP" />
+<!--    <Button-->
+<!--        android:id="@+id/changeIP"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_alignTop="@id/frame"-->
+<!--        android:layout_alignEnd="@+id/frame"-->
+<!--&lt;!&ndash;        android:background="@drawable/rounded_button"&ndash;&gt;-->
+<!--        android:text="Change IP" />-->
 
     <SeekBar
         android:id="@+id/zoomSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_alignBottom="@id/shootButton"
+        android:layout_margin="15dp"
+        android:layout_above="@id/shootButton"
         android:thumb="@drawable/seekbar_thumb"
-        android:progressDrawable="@drawable/seekbar_style" />
-    <!--        android:tickMark="@drawable/tickmark"-->
-    <!--        android:max="7"-->
-
+        android:progressDrawable="@drawable/seekbar_style"/>
     <Button
         android:id="@+id/shootButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/shoot_button_style"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@id/frame"
-        android:text="Shoot" />
+        android:layout_alignBottom="@id/frame"/>
 
 </RelativeLayout>
