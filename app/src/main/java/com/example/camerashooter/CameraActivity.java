@@ -64,7 +64,7 @@ public class CameraActivity extends AppCompatActivity {
         shootButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v("AVI", showCamera.getPixel(0,0)+"");
+                Log.v("AVI", showCamera.getTargetColor());
             }
         });
 
