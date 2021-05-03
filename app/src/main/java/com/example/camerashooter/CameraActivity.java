@@ -9,23 +9,36 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import java.net.Socket;
+
 public class CameraActivity extends AppCompatActivity {
+
+    private static final int CAMERA_REQUEST = 1888;
+    private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    private FrameLayout frameLayout;
+    private Camera camera;
+    private ShowCamera showCamera;
+    private Button shootButton;
+    private Socket server;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
+        shootButton = findViewById(R.id.shootButton);
 
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(CameraActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
         }
         else{
-            startCamera();
-
+            startGame();
         }
     }
 
@@ -33,7 +46,7 @@ public class CameraActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            startCamera();
+            startGame();
         } else {
             Toast.makeText(this,"Must allow camera usage", Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, MainActivity.class));
@@ -41,10 +54,21 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
-    public void startCamera() {
-        FrameLayout frameLayout = findViewById(R.id.frame);
-        Camera camera = Camera.open();
-        ShowCamera showCamera = new ShowCamera(this, camera, CameraActivity.this);
+    public void startGame(){
+        frameLayout = findViewById(R.id.frame);
+        camera = Camera.open();
+        showCamera = new ShowCamera(this, camera, CameraActivity.this);
         frameLayout.addView(showCamera);
+
+
+        shootButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("AVI", showCamera.getPixel(0,0)+"");
+            }
+        });
+
     }
+
+
 }
