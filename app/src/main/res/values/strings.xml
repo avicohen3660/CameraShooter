@@ -8,4 +8,7 @@
     <string name="guns">Guns</string>
     <string name="scopes">Scopes</string>
     <string name="magazines">Magazines</string>
+    <string name="price">Price</string>
+    <string name="element_name">Element Name</string>
+    <string name="purchase">purchase</string>
 </resources>
