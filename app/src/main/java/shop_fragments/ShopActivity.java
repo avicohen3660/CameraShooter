@@ -34,6 +34,7 @@ public class ShopActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentGuns()).commit();
         }
 
+        //todo show real money
         tv_money.setText(new Random().nextInt(1000)+""); // for now
     }
 
