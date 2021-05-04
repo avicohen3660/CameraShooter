@@ -1,5 +1,6 @@
 package shop_fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +13,13 @@ import com.example.camerashooter.R;
 
 public class FragmentGuns extends Fragment {
 
-        @Nullable
-        @Override
+        @Override @Nullable
+        @SuppressLint("SetTextI18n")
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_guns, container, false);
-            ((TextView)view.findViewById(R.id.tv)).setText("dgfv");
+
+            TextView shopType = view.findViewById(R.id.tv_shop_type);
+            shopType.setText("Guns Shop");
             return view;
 
         }
