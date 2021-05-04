@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="shop_navigation.ShopActivity"
+    tools:context="shop_fragments.ShopActivity"
     android:background="@color/background">
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package shop_navigation;
+package shop_fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
