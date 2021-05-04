@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class ShopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
+//        Log.v("AVI", this.getClass().getName()+"");
         tv_money = findViewById(R.id.tv_money);
 
         BottomNavigationView bottomNav = findViewById(R.id.shop_navigation);
@@ -39,6 +41,7 @@ public class ShopActivity extends AppCompatActivity {
                 @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
 
                     Fragment selectedFragment = new FragmentGuns();
 

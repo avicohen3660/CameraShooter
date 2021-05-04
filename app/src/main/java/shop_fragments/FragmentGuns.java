@@ -18,6 +18,7 @@ public class FragmentGuns extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_guns, container, false);
 
+            ((TextView)getActivity().findViewById(R.id.tv_shop_type)).setText("menachem");
 
             return view;
 
