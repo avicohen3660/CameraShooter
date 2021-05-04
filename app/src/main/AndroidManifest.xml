@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="shop_navigation.Shop"></activity>
+        <activity android:name="shop_navigation.Shop"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CameraActivity"
             android:screenOrientation="portrait" />
