@@ -15,9 +15,8 @@ public class FragmentScopes extends Fragment {
 
         @Override @Nullable @SuppressLint("SetTextI18n")
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view =inflater.inflate(R.layout.fragment_scopes, container, false);
-            TextView shopType = view.findViewById(R.id.tv_shop_type);
-            shopType.setText("Scope Shop");
+            View view = inflater.inflate(R.layout.fragment_scopes, container, false);
+
             return view;
         }
     }

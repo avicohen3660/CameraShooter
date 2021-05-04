@@ -18,8 +18,7 @@ public class ShopActivity extends AppCompatActivity {
 
     TextView tv_money;
 
-    @Override
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n") @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);

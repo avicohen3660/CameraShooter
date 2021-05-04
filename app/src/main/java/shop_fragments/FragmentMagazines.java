@@ -18,9 +18,8 @@ public class FragmentMagazines extends Fragment {
 
     @Override  @Nullable  @SuppressLint("SetTextI18n")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_magazines, container, false);
-        TextView shopType = view.findViewById(R.id.tv_shop_type);
-        shopType.setText("Magazine Shop");
+        View view = inflater.inflate(R.layout.fragment_magazines, container, false);
+
         return view;
     }
 }
