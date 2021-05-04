@@ -1,4 +1,4 @@
-package shop_navigation;
+package shop_fragments;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,9 @@ import java.util.Random;
 public class ShopActivity extends AppCompatActivity {
 
     TextView tv_money;
+
     @Override
+    @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
@@ -34,7 +36,7 @@ public class ShopActivity extends AppCompatActivity {
         tv_money.setText(new Random().nextInt(1000)+""); // for now
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import shop_navigation.ShopActivity;
+import shop_fragments.ShopActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
