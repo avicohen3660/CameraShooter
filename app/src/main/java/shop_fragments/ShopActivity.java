@@ -17,15 +17,21 @@ import java.util.Random;
 
 public class ShopActivity extends AppCompatActivity {
 
-    TextView tv_money;
+    private TextView tv_money, shop_type;
+    private int money;
 
-    @SuppressLint("SetTextI18n") @Override
+    @SuppressLint("SetTextI18n")
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
 //        Log.v("AVI", this.getClass().getName()+"");
         tv_money = findViewById(R.id.tv_money);
+        shop_type = findViewById(R.id.tv_shop_type);
+        shop_type.setText("Guns");
+        money = 990; //get from firebase
+        tv_money.setText(money+"");
 
         BottomNavigationView bottomNav = findViewById(R.id.shop_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -35,36 +41,38 @@ public class ShopActivity extends AppCompatActivity {
         }
 
         //todo show real money
-        tv_money.setText(new Random().nextInt(1000)+""); // for now
+        tv_money.setText(new Random().nextInt(1000) + ""); // for now
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @SuppressLint("NonConstantResourceId")
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
 
-                    Fragment selectedFragment = new FragmentGuns();
+            Fragment selectedFragment = new FragmentGuns();
+            switch (item.getItemId()) {
 
-                    switch (item.getItemId()) {
+                case R.id.guns:
+                    shop_type.setText("Guns");
+                    selectedFragment = new FragmentGuns();
 
-                        case R.id.guns:
-                            selectedFragment = new FragmentGuns();
+                    break;
 
-                            break;
+                case R.id.scopes:
+                    shop_type.setText("Scopes");
+                    selectedFragment = new FragmentScopes();
+                    break;
 
-                        case R.id.scopes:
-                            selectedFragment = new FragmentScopes();
-                            break;
+                case R.id.magazines:
+                    shop_type.setText("Magazines");
+                    selectedFragment = new FragmentMagazines();
+                    break;
 
-                        case R.id.magazines:
-                            selectedFragment = new FragmentMagazines();
-                            break;
-
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    selectedFragment).commit();
+            return true;
+        }
+    };
 }

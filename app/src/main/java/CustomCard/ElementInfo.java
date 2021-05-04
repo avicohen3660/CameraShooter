@@ -2,9 +2,10 @@ package CustomCard;
 
 public class ElementInfo {
 
-    private String elementName, elementPrice, elementUrlImage;
+    private String elementName;
+    private int elementPrice, elementUrlImage;
 
-    public ElementInfo(String elementName, String elementPrice, String elementUrlImage) {
+    public ElementInfo(String elementName, int elementPrice, int elementUrlImage) {
         this.elementName = elementName;
         this.elementPrice = elementPrice;
         this.elementUrlImage = elementUrlImage;
@@ -18,19 +19,19 @@ public class ElementInfo {
         this.elementName = elementName;
     }
 
-    public String getElementPrice() {
+    public int getElementPrice() {
         return elementPrice;
     }
 
-    public void setElementPrice(String elementPrice) {
+    public void setElementPrice(int elementPrice) {
         this.elementPrice = elementPrice;
     }
 
-    public String getElementUrlImage() {
+    public int getElementUrlImage() {
         return elementUrlImage;
     }
 
-    public void setElementUrlImage(String elementUrlImage) {
+    public void setElementUrlImage(int elementUrlImage) {
         this.elementUrlImage = elementUrlImage;
     }
 }
