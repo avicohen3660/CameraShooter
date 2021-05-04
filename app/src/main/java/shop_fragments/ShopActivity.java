@@ -31,6 +31,7 @@ public class ShopActivity extends AppCompatActivity {
         shop_type = findViewById(R.id.tv_shop_type);
         shop_type.setText("Guns");
         money = 990; //get from firebase
+        //TODO show real money
         tv_money.setText(money+"");
 
         BottomNavigationView bottomNav = findViewById(R.id.shop_navigation);
@@ -40,10 +41,15 @@ public class ShopActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentGuns()).commit();
         }
 
-        //todo show real money
-        tv_money.setText(new Random().nextInt(1000) + ""); // for now
     }
 
+    public boolean setMoney(int money){
+        if (this.money + money < 0)
+            return false;
+        this.money += money;
+        tv_money.setText(this.money+"");
+        return true;
+    }
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override

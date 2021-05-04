@@ -34,7 +34,7 @@ public class FragmentGuns extends Fragment {
 
             RecyclerView recyclerView = view.findViewById(R.id.recycle_view_guns);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            RecyclerViewAdapter adapter = new RecyclerViewAdapter(view.getContext(), elements);
+            RecyclerViewAdapter adapter = new RecyclerViewAdapter(view.getContext(), elements, (ShopActivity) getActivity());
             recyclerView.setAdapter(adapter);
 
             return view;

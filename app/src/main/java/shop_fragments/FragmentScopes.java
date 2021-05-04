@@ -33,7 +33,7 @@ public class FragmentScopes extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recycle_view_scopes);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(view.getContext(), elements);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(view.getContext(), elements, (ShopActivity) getActivity());
         recyclerView.setAdapter(adapter);
 
         return view;

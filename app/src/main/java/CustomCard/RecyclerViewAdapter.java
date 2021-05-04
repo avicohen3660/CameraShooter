@@ -1,6 +1,8 @@
 package CustomCard;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,18 +18,22 @@ import com.example.camerashooter.R;
 
 import java.util.List;
 
+import shop_fragments.ShopActivity;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<ElementInfo> elementInfos;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     private Context context;
+    private ShopActivity shopActivity;
 
     // data is passed into the constructor
-    public RecyclerViewAdapter(Context context, List<ElementInfo> info) {
+    public RecyclerViewAdapter(Context context, List<ElementInfo> info, ShopActivity shopActivity) {
         this.mInflater = LayoutInflater.from(context);
         this.elementInfos = info;
         this.context = context;
+        this.shopActivity = shopActivity;
     }
 
     // inflates the row layout from xml when needed
@@ -68,8 +74,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    context.get
-                    Toast.makeText(context, price.getText().toString(), Toast.LENGTH_SHORT).show();
+                    if (!shopActivity.setMoney(-Integer.parseInt(price.getText().toString())))
+                        Toast.makeText(context, "You don't have enough money", Toast.LENGTH_SHORT).show();
                 }
             });
             itemView.setOnClickListener(this);
