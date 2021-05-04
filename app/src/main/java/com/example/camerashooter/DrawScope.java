@@ -37,7 +37,7 @@ public class DrawScope extends View {
 //          scopeList.rectangleScope(canvas);
 //          scopeList.largeCircleScopeWithLines(canvas);
 //          scopeList.circleInsideCircle(canvas);
-          scopeList.circleScope(canvas);
+          scopeList.defaultScope(canvas);
 
 
     }

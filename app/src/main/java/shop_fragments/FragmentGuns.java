@@ -28,9 +28,17 @@ public class FragmentGuns extends Fragment {
 
 
             ArrayList<ElementInfo> elements = new ArrayList<>();
-            for (int i = 0; i < 10; i++) {
-                elements.add(new ElementInfo("Pistol2",200,R.drawable.ic_gun_24));
-            }
+
+            elements.add(new ElementInfo("Pistol",500,R.drawable.ic_pistol));
+            elements.add(new ElementInfo("Pistol with silencer",700,R.drawable.ic_pistol_silencer));
+            elements.add(new ElementInfo("Uzi",1200,R.drawable.ic_uzi));
+            elements.add(new ElementInfo("MK-47",2000,R.drawable.ic_mk47));
+            elements.add(new ElementInfo("M4",2200,R.drawable.ic_m4));
+            elements.add(new ElementInfo("Sniper",2600,R.drawable.ic_sniper));
+            elements.add(new ElementInfo("ShotGun",3000,R.drawable.ic_shotgun));
+
+
+
 
             RecyclerView recyclerView = view.findViewById(R.id.recycle_view_guns);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));

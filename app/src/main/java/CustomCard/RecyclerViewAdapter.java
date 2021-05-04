@@ -49,8 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ElementInfo info = elementInfos.get(position);
         holder.name.setText(info.getElementName());
         holder.price.setText(info.getElementPrice() + "");
-        holder.image.setBackgroundResource(info.getElementUrlImage());
-
+        holder.image.setImageResource(info.getElementUrlImage());
     }
 
     // total number of rows
@@ -101,42 +100,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
-
-//    public class CardDetails{
-//        TextView elementName, elementPrice;
-//        ImageView elementImage;
-//    }
-//
-//    public CardViewCustom(Context context, List<ElementInfo> objects) {
-//        super(context, R.layout.card_element, objects);
-//
-//    }
-//
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//        View card;
-//        CardDetails cardDetails;
-//
-//        if (convertView == null) {
-//
-//            card = LayoutInflater.from(getContext()).inflate(R.layout.card_element, parent, false);
-//
-//            cardDetails = new CardDetails();
-//            cardDetails.elementName = card.findViewById(R.id.textView1);
-//            cardDetails.elementPrice = card.findViewById(R.id.textView2);
-//            cardDetails.elementImage = card.findViewById(R.id.image);
-//            card.setTag(cardDetails);
-//        } else {
-//            card = convertView;
-//            cardDetails = (CardDetails) card.getTag();
-//        }
-//
-//        ElementInfo item = getItem(position);
-//        cardDetails.elementName.setText(item.getElementName());
-//        cardDetails.elementPrice.setText(item.getElementPrice());
-//        cardDetails.elementImage.setTag(item.getElementUrlImage()); // todo this maybe wont work! <------
-////        Picasso.get().load(item.getElementUrlImage()).resize(400,400).transform(new RoundedCornersTransformation(300, 0)).into(cardDetails.elementImage);
-//
-//        return card;
-//    }
 }
