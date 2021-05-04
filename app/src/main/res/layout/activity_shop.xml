@@ -51,8 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/shop_menu"
-        app:itemIconTint="@color/white"
-        android:background="@drawable/navigation_shop"
-        app:itemTextColor="@color/white"/>
+        android:background="@drawable/navigation_shop"/>
 
 </RelativeLayout>

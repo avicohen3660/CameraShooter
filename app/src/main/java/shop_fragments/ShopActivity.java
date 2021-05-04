@@ -50,6 +50,7 @@ public class ShopActivity extends AppCompatActivity {
 
                         case R.id.guns:
                             selectedFragment = new FragmentGuns();
+
                             break;
 
                         case R.id.scopes:
