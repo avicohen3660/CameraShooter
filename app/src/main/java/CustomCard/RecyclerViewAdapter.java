@@ -68,7 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    context.get
+//                    context.get
                     Toast.makeText(context, price.getText().toString(), Toast.LENGTH_SHORT).show();
                 }
             });
