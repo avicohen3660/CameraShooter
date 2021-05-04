@@ -5,12 +5,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Magazine Shop"
-        android:textSize="30sp"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_view_magazines"
         android:layout_width="match_parent"

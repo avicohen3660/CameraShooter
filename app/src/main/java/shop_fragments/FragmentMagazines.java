@@ -20,6 +20,8 @@ public class FragmentMagazines extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_magazines, container, false);
 
+        ((TextView)getActivity().findViewById(R.id.tv_shop_type)).setText("Magazine Shop");
+
         return view;
     }
 }

@@ -17,6 +17,8 @@ public class FragmentScopes extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_scopes, container, false);
 
+            ((TextView)getActivity().findViewById(R.id.tv_shop_type)).setText("Scopes Shop");
+
             return view;
         }
     }

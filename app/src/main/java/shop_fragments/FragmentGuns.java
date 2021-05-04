@@ -13,12 +13,12 @@ import com.example.camerashooter.R;
 
 public class FragmentGuns extends Fragment {
 
-        @Override @Nullable
-        @SuppressLint("SetTextI18n")
+
+        @Override @Nullable @SuppressLint("SetTextI18n")
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_guns, container, false);
 
-            ((TextView)getActivity().findViewById(R.id.tv_shop_type)).setText("menachem");
+            ((TextView)getActivity().findViewById(R.id.tv_shop_type)).setText("Guns Shop");
 
             return view;
 
