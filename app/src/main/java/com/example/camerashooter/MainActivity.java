@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import shop_navigation.Shop;
+import shop_navigation.ShopActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.shop:
-                startActivity(new Intent(getApplicationContext(), Shop.class));
+                startActivity(new Intent(getApplicationContext(), ShopActivity.class));
                 break;
         }
     }

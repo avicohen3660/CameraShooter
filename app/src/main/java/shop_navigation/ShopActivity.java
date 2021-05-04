@@ -7,15 +7,22 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import com.example.camerashooter.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Shop extends AppCompatActivity {
+import java.util.Random;
 
+public class ShopActivity extends AppCompatActivity {
+
+    TextView tv_money;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+        tv_money = findViewById(R.id.tv_money);
 
         BottomNavigationView bottomNav = findViewById(R.id.shop_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -23,6 +30,8 @@ public class Shop extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentGuns()).commit();
         }
+
+        tv_money.setText(new Random().nextInt(1000)+""); // for now
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

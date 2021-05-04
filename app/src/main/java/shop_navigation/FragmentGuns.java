@@ -15,8 +15,6 @@ public class FragmentGuns extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             return inflater.inflate(R.layout.fragment_guns, container, false);
 
-
-
         }
 
 }
