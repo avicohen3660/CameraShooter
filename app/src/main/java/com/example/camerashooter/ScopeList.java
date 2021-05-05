@@ -66,7 +66,7 @@ public class ScopeList {
         canvas.drawCircle( getCenterX(), getCenterY(), 160, paint);
     }
 
-    public void circleInsideCircle(Canvas canvas){
+    public void sniperScope(Canvas canvas){
 
         canvas.drawLine( getCenterX() - 160, getCenterY(), getCenterX() + 160, getCenterY(), paint);
         canvas.drawLine( getCenterX(),getCenterY() - 160,  getCenterX(),getCenterY() + 160, paint);
