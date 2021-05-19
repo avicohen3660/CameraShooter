@@ -79,7 +79,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_style"
-                android:text="@string/purchase" />
+                android:text="@string/purchase"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/equip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_style"
+                android:text="@string/equip"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

@@ -37,9 +37,6 @@ public class FragmentGuns extends Fragment {
             elements.add(new ElementInfo("Sniper",2600,R.drawable.ic_sniper));
             elements.add(new ElementInfo("ShotGun",3000,R.drawable.ic_shotgun));
 
-
-
-
             RecyclerView recyclerView = view.findViewById(R.id.recycle_view_guns);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             RecyclerViewAdapter adapter = new RecyclerViewAdapter(view.getContext(), elements, (ShopActivity) getActivity());

@@ -1,8 +1,7 @@
 package CustomCard;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.camerashooter.ConnectionActivity;
 import com.example.camerashooter.R;
 
 import java.util.List;
@@ -62,19 +61,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView name;
         TextView price;
         ImageView image;
-        Button button;
+        Button purchaseButton, equipButton;
 
         ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.element_name);
             price = itemView.findViewById(R.id.element_price);
             image = itemView.findViewById(R.id.element_image);
-            button = itemView.findViewById(R.id.purchase_button);
-            button.setOnClickListener(new View.OnClickListener() {
+            purchaseButton = itemView.findViewById(R.id.purchase_button);
+            equipButton = itemView.findViewById(R.id.equip);
+
+            purchaseButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (!shopActivity.setMoney(-Integer.parseInt(price.getText().toString())))
                         Toast.makeText(context, "You don't have enough money", Toast.LENGTH_SHORT).show();
+                    else{
+                        purchaseButton.setVisibility(View.GONE);
+                        equipButton.setVisibility(View.VISIBLE);
+                        equipButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                equipButton.setBackground(ContextCompat.getDrawable(context, R.drawable.green_button_style));
+                            }
+                        });
+                    }
+
                 }
             });
             itemView.setOnClickListener(this);
