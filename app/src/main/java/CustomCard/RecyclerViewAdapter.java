@@ -77,11 +77,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     if (!shopActivity.setMoney(-Integer.parseInt(price.getText().toString())))
                         Toast.makeText(context, "You don't have enough money", Toast.LENGTH_SHORT).show();
                     else{
+                          //todo create an object that contain the items he bought
                         purchaseButton.setVisibility(View.GONE);
                         equipButton.setVisibility(View.VISIBLE);
                         equipButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                //todo create an object that contain the current equipment then replace it with the neew one and change the colors green to red and red to green
                                 equipButton.setBackground(ContextCompat.getDrawable(context, R.drawable.green_button_style));
                             }
                         });
